@@ -1,16 +1,34 @@
-# React + Vite
+# TechVault
+## Electronic Devices E-commerce Storefront
+TechValut is a responsive React-based e-commerce storefront that allows users to browse electronic devices and accessories across different brands, explore product details, compare products, and complete a simulated checkout process.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+---
 
-Currently, two official plugins are available:
+## Features
+- Browse, search, and filter electronic devices.
+- View detailed product information and specifications.
+- Add, remove, and manage cart items.
+- Manage shopping-cart state using Redux.
+- Complete a validated checkout form.
+- View order confirmation and order summaries.
+- Responsive user interface for different screen sizes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## User Journey
+Browse Products → Product Details → Add to Cart → Manage Cart → Checkout → Order Confirmation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Tech Stack
+- **Frontend:** React, JavaScript, HTML, CSS
+- **State Management:** Redux
+- **Routing:** React Router
+- **Data:** Third-party product API
+- **Version Control:** Git and GitHub
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+This is an educational graduation project developed as part of the Digital Egypt Pioneers Initiative (DEPI). Payments are simulated; no real transactions are processed.
+
+
