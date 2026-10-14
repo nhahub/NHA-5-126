@@ -21,7 +21,7 @@ Browse Products → Product Details → Add to Cart → Manage Cart → Checkout
 ---
 
 ## Tech Stack
-- **Frontend:** React, JavaScript, HTML, CSS
+- **Frontend:** React, JavaScript, Tailwind, HTML, CSS
 - **State Management:** Redux
 - **Routing:** React Router
 - **Data:** Third-party product API
