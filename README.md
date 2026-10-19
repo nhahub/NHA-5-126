@@ -30,5 +30,5 @@ Browse Products → Product Details → Add to Cart → Manage Cart → Checkout
 ---
 
 This is an educational graduation project developed as part of the Digital Egypt Pioneers Initiative (DEPI). Payments are simulated; no real transactions are processed.
-
+test access
 
