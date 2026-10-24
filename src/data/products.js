@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // src/data/products.js
 export const mockProducts = [
   { id: 1,  title: "iPhone 15 Pro",        brand: "Apple",   category: "smartphones", price: 999,  rating: 4.8, thumbnail: "https://dummyjson.com/image/i/products/1/thumbnail.jpg" },
@@ -12,4 +13,18 @@ export const mockProducts = [
   { id: 10, title: "Samsung Galaxy Tab S9", brand: "Samsung", category: "tablets",    price: 799,  rating: 4.5, thumbnail: "https://dummyjson.com/image/i/products/10/thumbnail.jpg" },
   { id: 11, title: "Logitech MX Master 3", brand: "Logitech", category: "accessories", price: 99,  rating: 4.7, thumbnail: "https://dummyjson.com/image/i/products/11/thumbnail.jpg" },
   { id: 12, title: "ASUS ROG Zephyrus",    brand: "ASUS",    category: "laptops",     price: 1799, rating: 4.4, thumbnail: "https://dummyjson.com/image/i/products/12/thumbnail.jpg" },
+=======
+// Hardcode these for now so the sidebar always has options, 
+// even while the API is loading.
+export const categories = [
+  "smartphones", "laptops", "fragrances", "skincare", 
+  "groceries", "home-decoration", "furniture", "tops", 
+  "womens-dresses", "womens-shoes", "mens-shirts", "mens-shoes", 
+  "mens-watches", "womens-watches", "womens-bags", "womens-jewellery", 
+  "sunglasses", "automotive", "motorcycle", "lighting"
+];
+
+export const brands = [
+  "Apple", "Samsung", "Google", "Sony", "Bose", "Dell", "Lenovo", "Asus"
+>>>>>>> origin/feature/products-page-components
 ];
