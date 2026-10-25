@@ -1,29 +1,36 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+@plugin "daisyui";
 
 /* =========================================
-   TechValut Global Design Tokens (Tailwind v4)
+   TechValut Global Design Tokens
    ========================================= */
+
 @theme {
   /* Brand Colors */
-  --color-ivory: #F6F3EC;        /* bg-ivory (Main page background) */
-  --color-ink: #191919;          /* bg-ink, text-ink (Headlines, buttons) */
-  --color-signal: #F06432;       /* bg-signal, text-signal (Primary actions) */
-  --color-surface: #FFFFFF;      /* bg-surface (Cards, forms, navbar) */
-  --color-warmgray: #E7E2D9;     /* border-warmgray (Borders, dividers) */
-  --color-muted: #706F69;        /* text-muted (Secondary text) */
-  --color-success: #22C55E;      /* text-success, bg-success (Checkout success) */
+  --color-ivory: #F6F3EC;
+  --color-ink: #191919;
+  --color-signal: #F06432;
+  --color-surface: #FFFFFF;
+  --color-warmgray: #E7E2D9;
+  --color-muted: #706F69;
+  --color-success: #22C55E;
 
   /* Typography */
   --font-heading: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-georgia: Georgia, "Times New Roman", serif;
 
-  /* Editorial Shadow (Used on hover for cards/buttons) */
+  /* Editorial Shadow */
   --shadow-editorial: 4px 4px 0px #191919;
 }
 
 /* =========================================
    Global Base Styles
    ========================================= */
+
 @layer base {
   body {
     @apply bg-ivory text-ink font-body antialiased;
@@ -37,23 +44,20 @@
 /* =========================================
    Reusable Global Components
    ========================================= */
+
 @layer components {
-  /* Primary Orange Button */
   .btn-primary {
     @apply bg-signal text-surface font-heading font-bold uppercase tracking-wider text-sm px-6 py-3 rounded-sm transition-all duration-300 hover:bg-[#d9562a] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
-  /* Secondary Outline Button */
   .btn-secondary {
     @apply bg-transparent border border-warmgray text-ink font-heading font-bold uppercase tracking-wider text-sm px-6 py-3 rounded-sm transition-all duration-300 hover:border-ink active:scale-95;
   }
 
-  /* Editorial Label (For "NEW", "BESTSELLER", etc.) */
   .label-editorial {
     @apply text-[10px] font-body font-bold uppercase tracking-[0.15em] text-muted;
   }
 
-  /* The signature TechValut hard shadow hover effect */
   .hover-editorial {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-editorial;
   }
