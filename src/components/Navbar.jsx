@@ -2,14 +2,13 @@ import React from 'react'
 
 import logo from '../assets/icons/logo.png'
 import search from '../assets/icons/search.png'
-import cart from '../assets//icons/cart.png'
+import cart from '../assets/icons/cart.png'
 import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
 
   return (
     <>
-      {/* Announcement Bar */}
       <div className="bg-[#191919] text-white min-h-8 px-9.5 sm:px-20 grid grid-cols-3 items-center text-[9px] sm:text-[10px] tracking-[0.12em]">
 
         <div />
@@ -24,7 +23,6 @@ export default function Navbar() {
 
       </div>
 
-      {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-[#F6F3EC]/95 backdrop-blur-sm px-5 sm:px-10 lg:px-[5%] max-w-[1187.2] min-h-21 grid grid-cols-1 lg:grid-cols-3 items-center border-b border-[#D4CDC2]">
 
         {/* Logo */}
@@ -43,7 +41,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Navigation Links */}
         <ul className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-8 text-[13px] sm:text-sm py-3 lg:py-0">
 
   <li>
