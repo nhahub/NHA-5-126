@@ -17,7 +17,8 @@ export default function CatalogPage({
   const [searchParams] = useSearchParams();
 
   const filteredProducts = useMemo(() => {
-    const query = (searchParams.get("q") || "").toLowerCase();
+    // 1. تحسين قراءة الكويري (شيل المسافات الزيادة وحولها لحروف صغيرة)
+    const query = (searchParams.get("q") || "").trim().toLowerCase();
     const category = searchParams.get("category");
     const brand = searchParams.get("brand");
     const maxPrice = Number(searchParams.get("maxPrice")) || Infinity;
@@ -25,13 +26,29 @@ export default function CatalogPage({
     const order = searchParams.get("order");
 
     let result = products.filter((p) => {
-      if (query && !p.title.toLowerCase().includes(query) && !p.brand?.toLowerCase().includes(query)) return false;
+      // 2. البحث بيشتغل دلوقتي على: الاسم (title) + البراند (brand) + الكاتيجوري (category)
+      if (query) {
+        const productName = p.title?.toLowerCase() || "";
+        const productBrand = p.brand?.toLowerCase() || "";
+        const productCategory = p.category?.toLowerCase() || "";
+        
+        // بنجمع كل حاجة في نص واحد وندور فيها
+        const fullText = `${productName} ${productBrand} ${productCategory}`;
+        
+        // لو فيه كذا كلمة، لازم كلهم يكونوا موجودين
+        const searchTerms = query.split(/\s+/);
+        if (!searchTerms.every(term => fullText.includes(term))) return false;
+      }
+
+      // فلاتر جانبية
       if (category && p.category !== category) return false;
       if (brand && p.brand !== brand) return false;
       if (p.price > maxPrice) return false;
+      
       return true;
     });
 
+    // الترتيب
     if (sortBy === "price") {
       result.sort((a, b) => order === "asc" ? a.price - b.price : b.price - a.price);
     } else if (sortBy === "rating") {
