@@ -4,6 +4,7 @@ import Featured from '../../components/Featured.jsx'
 import homeHero from '../../assets/images/Container.png'
 import AudioHero from '../../components/AudioHero'
 import NewArrivals from '../../components/NewArrivals'
+import ShopByCategory from '../../components/ShopByCategory'
 import { productService } from '../../Helpers/productService'
 
 export default function Home() {
@@ -52,7 +53,8 @@ export default function Home() {
         secondBtn={true}
         secondBtnContent="Browse categories"
       />
-      <div className="bg-[#F6F3EC] min-h-[1100px]" />
+
+      <ShopByCategory />
 
       <Featured
         products={products}
@@ -61,6 +63,7 @@ export default function Home() {
         title="FEATURED NOW"
         desc="Good design, useful features, fair value. These are the products earning a place in our edit."
       />
+
       <AudioHero />
       <NewArrivals />
     </>
