@@ -1,34 +1,29 @@
 import { useSearchParams } from "react-router-dom";
 
 export default function SearchSortBar({ resultCount }) {
-  // 'searchParams' reads the URL. 'setSearchParams' writes to the URL.
   const [searchParams, setSearchParams] = useSearchParams();
   
-  // Read current values from the URL (or fallback to default)
   const query = searchParams.get("q") || "";
   const sortValue = searchParams.get("sortBy") 
     ? `${searchParams.get("sortBy")}-${searchParams.get("order")}` 
     : "";
 
-  // 1. Handle Search typing
   const handleSearch = (e) => {
     const value = e.target.value;
     
-    // We use a callback inside setSearchParams so we don't accidentally delete other filters
     setSearchParams((prev) => {
       const p = new URLSearchParams(prev);
       if (value) {
-        p.set("q", value); // Add "?q=value" to the URL
+        p.set("q", value); 
       } else {
-        p.delete("q"); // If they delete the text, remove it from the URL
+        p.delete("q"); 
       }
       return p;
     });
   };
 
-  // 2. Handle Sort dropdown
   const handleSort = (e) => {
-    const value = e.target.value; // e.g., "price-asc"
+    const value = e.target.value; 
     
     setSearchParams((prev) => {
       const p = new URLSearchParams(prev);
@@ -36,7 +31,6 @@ export default function SearchSortBar({ resultCount }) {
         p.delete("sortBy"); 
         p.delete("order");
       } else {
-        // Split "price-asc" into sortBy="price" and order="asc"
         const [sortBy, order] = value.split("-");
         p.set("sortBy", sortBy);
         p.set("order", order);
@@ -48,7 +42,6 @@ export default function SearchSortBar({ resultCount }) {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-warmgray pb-4 mb-8">
       
-      {/* SEARCH INPUT */}
       <div className="flex items-center gap-3 w-full md:w-1/2 group">
         <svg className="w-5 h-5 text-muted group-focus-within:text-signal transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -62,15 +55,12 @@ export default function SearchSortBar({ resultCount }) {
         />
       </div>
 
-      {/* SORT & RESULT COUNT */}
       <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
         
-        {/* Result Count */}
         <span className="text-muted text-[10px] font-bold uppercase tracking-widest hidden md:block">
           {resultCount} Products
         </span>
         
-        {/* Sort Dropdown */}
         <div className="flex items-center gap-2">
           <span className="text-muted text-[10px] font-bold uppercase tracking-widest">Sort by</span>
           <select 
