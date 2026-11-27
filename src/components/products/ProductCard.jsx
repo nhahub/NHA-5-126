@@ -51,7 +51,6 @@ export default function ProductCard({ product, showDiscount = false }) {
         <div className="flex justify-between items-center mt-auto pt-4">
           
           <div className="flex items-baseline gap-2">
-            {/* FIX 2: Removed .toFixed(2) so it doesn't crash if the price is a whole number */}
             <span className="font-heading font-bold text-ink text-2xl">${product.price}</span>
             
             {(product.oldPrice || (showDiscount && product.discountPercentage > 0)) && (
