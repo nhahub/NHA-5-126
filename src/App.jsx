@@ -6,6 +6,7 @@ import ProductDetailsPage from './Pages/ProductDetailsPage'
 import Deals from './Pages/deals/Deals'
 import Categories from './Pages/categories/Categories'
 import CartPage from './Pages/CartPage'
+import CheckoutPage from './Pages/checkout/CheckoutPage'
 import Accessories from "./pages/Accessories/Accessories";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/accessories" element={<Accessories />} />
         </Route>
       </Routes>

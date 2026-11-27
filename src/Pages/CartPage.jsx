@@ -123,9 +123,9 @@ export default function CartPage() {
               </div>
 
               <p className="text-[10px] text-muted leading-5 mt-6">Taxes calculated at checkout. This is a simulated purchase.</p>
-              <button type="button" className="w-full h-12 mt-5 bg-signal text-white text-sm font-semibold hover:bg-ink transition-colors">
+              <Link to="/checkout" className="flex items-center justify-center w-full h-12 mt-5 bg-signal text-white text-sm font-semibold hover:bg-ink transition-colors no-underline">
                 Proceed to checkout <span className="ml-2 text-lg align-[-1px]">→</span>
-              </button>
+              </Link>
             </aside>
           </div>
         )}

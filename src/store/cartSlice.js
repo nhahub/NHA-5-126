@@ -26,16 +26,24 @@ const cartSlice = createSlice({
         quantity: product.quantity || 1,
       })
     },
+
     increaseQuantity: (state, action) => {
       const item = state.items.find((cartItem) => cartItem.id === action.payload)
       if (item) item.quantity += 1
     },
+
     decreaseQuantity: (state, action) => {
       const item = state.items.find((cartItem) => cartItem.id === action.payload)
       if (item && item.quantity > 1) item.quantity -= 1
     },
+
     removeFromCart: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
+    },
+
+    // Clear all items from the cart after a successful order
+    clearCart: (state) => {
+      state.items = []
     },
   },
 })
@@ -45,11 +53,14 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   removeFromCart,
+  clearCart,
 } = cartSlice.actions
 
 export const selectCartItems = (state) => state.cart.items
+
 export const selectCartItemCount = (state) =>
   state.cart.items.reduce((total, item) => total + item.quantity, 0)
+
 export const selectCartSubtotal = (state) =>
   state.cart.items.reduce((total, item) => total + item.price * item.quantity, 0)
 
