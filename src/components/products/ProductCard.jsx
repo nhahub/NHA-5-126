@@ -10,7 +10,7 @@ export default function ProductCard({ product, showDiscount = false }) {
       to={`/products/${product.id}`} 
       className="group flex flex-col bg-surface border border-warmgray rounded-sm overflow-hidden"
     >
-      <div className="relative aspect-square bg-[#0d0d0d] overflow-hidden">
+      <div className="relative aspect-square bg-[#ece9e1] overflow-hidden">
 
         {product.tag && (
           <span className="absolute bottom-4 left-4 z-10 bg-ink text-surface text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5">
